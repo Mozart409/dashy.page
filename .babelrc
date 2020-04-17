@@ -11,8 +11,8 @@
                 ],
                 "alias": {
                     "@utils": "./src/components/utils",
-                    "@components": "./src/components",
-                    "@theme": "./src/theme"
+                    "@components": "./src/components"
+                    
                 }
             }
         ]

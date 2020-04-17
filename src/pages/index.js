@@ -1,20 +1,42 @@
-import Layout from "../components/layout";
+import { useEffect, useState } from 'react'
+import Layout from '@components/Layout'
+import Unsplash from 'unsplash-js'
+const unsplash = new Unsplash({
+  accessKey: process.env.UNSPLASH_CLIENT_ID,
+  // Optionally you can also configure a custom header to be sent with every request
+  headers: {
+    'X-Custom-Header': 'dashy.page'
+  },
+  // Optionally if using a node-fetch polyfill or a version of fetch which supports the timeout option, you can configure the request timeout for all requests
+  timeout: 500 // values set in ms
+})
 
-function Home() {
+const Home = () => {
+  const [ImageUrl, setImageUrl] = useState()
+  useEffect(() => {
+    unsplash.photos.getRandomPhoto({ username: 'naoufal' }).then(json => {
+      setImageUrl(json.url)
+    })
+  }, [unsplash])
+
   return (
     <Layout>
-      <div className="flex flex-col items-center justify-center">
-        <img
-          src="team-of-critters.svg"
-          className="max-w-xl w-full"
-        />
-
-        <h2 className="bg-yellow-400 font-bold my-8 p-3 text-lg md:text-2xl">
-          Hi! Welcome to your first Next.js site.
-        </h2>
-      </div>
+      <img src={ImageUrl}></img>
+      <span>Key {process.env.UNSPLASH_CLIENT_ID}</span>
     </Layout>
-  );
+  )
 }
 
-export default Home;
+export async function getServerSideProps (context) {
+  return {
+    props: {
+      /* image: unsplash.photos.getRandomPhoto({ username: "naoufal" })
+  .then(json => {
+    console.log(json)
+    
+  }) */
+    } // will be passed to the page component as props
+  }
+}
+
+export default Home
