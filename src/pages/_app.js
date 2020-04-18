@@ -1,5 +1,6 @@
 import fetch from 'node-fetch'
 global.fetch = fetch
+
 import '../style.css'
 
 function MyApp ({ Component, pageProps }) {

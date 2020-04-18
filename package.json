@@ -18,16 +18,8 @@
       "pre-push": "yarn format"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/taylorbryant/next-starter-tailwind.git"
-  },
-  "author": "Taylor Bryant",
+  "author": "Amadeus Mader",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/taylorbryant/next-starter-tailwind/issues"
-  },
-  "homepage": "https://github.com/taylorbryant/next-starter-tailwind#readme",
   "dependencies": {
     "@next/bundle-analyzer": "^9.3.5",
     "dotenv": "^8.2.0",
