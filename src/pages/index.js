@@ -4,6 +4,9 @@ import { toast } from 'react-toastify'
 
 import Unsplash from 'unsplash-js'
 import Layout from '@components/layout'
+import Date from '@components/date'
+import Sidebar from '@components/sidebar'
+
 global.fetch = fetch
 
 const unsplash = new Unsplash({
@@ -30,18 +33,21 @@ const Home = () => {
       .catch(err => setError(err))
   }
 
-
-/*   useEffect(() => {
+  /*   useEffect(() => {
     fetchData()
   }, []) */
 
   return (
     <Layout>
-      {/* <img className="bg-cover bg-center" src={ImageUrl}></img> */}
-      <span>Data</span>
-      <p>
-      {JSON.stringify(data)}
-      </p>
+      <div className='grid grid-cols-3 gap-4 max-h-full'>
+        <div className='col-span-3 '></div>
+        <div className='col-span-2 '></div>
+        <div className='col-span-1 '></div>
+        <div className='col-span-1 '>
+          <Date />
+        </div>
+        <div className='col-span-2 '></div>
+      </div>
     </Layout>
   )
 }
