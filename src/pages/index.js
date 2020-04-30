@@ -6,6 +6,7 @@ import Unsplash from 'unsplash-js'
 import Layout from '@components/layout'
 import Date from '@components/date'
 import Sidebar from '@components/sidebar'
+import Weather from '@components/weather'
 
 global.fetch = fetch
 
@@ -39,14 +40,21 @@ const Home = () => {
 
   return (
     <Layout>
-      <div className='grid grid-cols-3 gap-4 max-h-full'>
-        <div className='col-span-3 '></div>
-        <div className='col-span-2 '></div>
-        <div className='col-span-1 '></div>
-        <div className='col-span-1 '>
+      <div className='grid grid-cols-3 gap-4'>
+        <div className='col-span-3'></div>
+        <div className='col-span-2'></div>
+        <div className='col-span-1'></div>
+        <div className='col-span-1'></div>
+        <div className='col-span-1'>
           <Date />
         </div>
-        <div className='col-span-2 '></div>
+        <div className='col-span-1'></div>
+        <div className='col-span-1'></div>
+        <div className='col-span-1'>
+          <Weather />
+        </div>
+        <div className='col-span-1'></div>
+        <div className='col-span-3'></div>
       </div>
     </Layout>
   )

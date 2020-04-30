@@ -1,9 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import moment from 'moment'
 import useInterval from '@hooks/useInterval'
 
 export default function date () {
-  
   let [date, setDate] = useState()
   let [time, setTime] = useState()
 
