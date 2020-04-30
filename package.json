@@ -13,11 +13,6 @@
     "test": "prettier-standard --check '**/*.{js,css}'",
     "clean": "rm -rf .next"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn format"
-    }
-  },
   "author": "Amadeus Mader",
   "license": "MIT",
   "dependencies": {
